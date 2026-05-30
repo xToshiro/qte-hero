@@ -111,6 +111,13 @@ class GameEngine {
         // Navegação por Controle no Pause
         this.pauseItems = ['resume-game-btn', 'exit-game-btn'];
         this.pauseIndex = 0;
+
+        // Navegação por Controle no Game Over e Victory
+        this.goItems = ['restart-game-btn', 'menu-btn-from-go'];
+        this.goIndex = 0;
+        
+        this.vicItems = ['restart-game-victory-btn', 'menu-btn-from-vic'];
+        this.vicIndex = 0;
     }
 
     // Inicialização da engine
@@ -344,6 +351,10 @@ class GameEngine {
                 this.renderPerformanceChart('go');
                 this.renderNerdStats('go');
                 this.saveRoundToHistory();
+                
+                // Inicializa foco do controle no Game Over
+                this.goIndex = 0;
+                this.updateGameOverGamepadFocus();
                 break;
             case 'VICTORY':
                 this.dom.screens.victory.classList.add('active');
@@ -352,6 +363,10 @@ class GameEngine {
                 this.renderPerformanceChart('vic');
                 this.renderNerdStats('vic');
                 this.saveRoundToHistory();
+                
+                // Inicializa foco do controle na Vitória
+                this.vicIndex = 0;
+                this.updateVictoryGamepadFocus();
                 break;
         }
     }
@@ -505,6 +520,10 @@ class GameEngine {
                     this.updateGameplay(dt);
                 }
             }
+        } else if (this.state === 'GAMEOVER') {
+            this.updateGameOverGamepadNavigation();
+        } else if (this.state === 'VICTORY') {
+            this.updateVictoryGamepadNavigation();
         }
 
         // Loop contínuo
@@ -1768,6 +1787,84 @@ class GameEngine {
 
         // Adiciona no focado
         const focusedId = this.pauseItems[this.pauseIndex];
+        const focusedEl = document.getElementById(focusedId);
+        if (focusedEl) {
+            focusedEl.classList.add('gamepad-focused');
+        }
+    }
+
+    updateGameOverGamepadNavigation() {
+        let moved = false;
+
+        if (inputs.isInputDown('DLeft') || inputs.isInputDown('LS_Left') || inputs.isInputDown('DUp') || inputs.isInputDown('LS_Up')) {
+            this.goIndex = 0; // "Jogar Novamente"
+            moved = true;
+        } else if (inputs.isInputDown('DRight') || inputs.isInputDown('LS_Right') || inputs.isInputDown('DDown') || inputs.isInputDown('LS_Down')) {
+            this.goIndex = 1; // "Voltar ao Menu"
+            moved = true;
+        }
+
+        if (moved) {
+            sfx.playHit();
+            this.updateGameOverGamepadFocus();
+        }
+
+        // Simula clique com botão A
+        if (inputs.isInputDown('A')) {
+            const focusedId = this.goItems[this.goIndex];
+            const btnEl = document.getElementById(focusedId);
+            if (btnEl) {
+                btnEl.click();
+            }
+        }
+    }
+
+    updateGameOverGamepadFocus() {
+        this.goItems.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.classList.remove('gamepad-focused');
+        });
+
+        const focusedId = this.goItems[this.goIndex];
+        const focusedEl = document.getElementById(focusedId);
+        if (focusedEl) {
+            focusedEl.classList.add('gamepad-focused');
+        }
+    }
+
+    updateVictoryGamepadNavigation() {
+        let moved = false;
+
+        if (inputs.isInputDown('DLeft') || inputs.isInputDown('LS_Left') || inputs.isInputDown('DUp') || inputs.isInputDown('LS_Up')) {
+            this.vicIndex = 0; // "Jogar Novamente"
+            moved = true;
+        } else if (inputs.isInputDown('DRight') || inputs.isInputDown('LS_Right') || inputs.isInputDown('DDown') || inputs.isInputDown('LS_Down')) {
+            this.vicIndex = 1; // "Voltar ao Menu"
+            moved = true;
+        }
+
+        if (moved) {
+            sfx.playHit();
+            this.updateVictoryGamepadFocus();
+        }
+
+        // Simula clique com botão A
+        if (inputs.isInputDown('A')) {
+            const focusedId = this.vicItems[this.vicIndex];
+            const btnEl = document.getElementById(focusedId);
+            if (btnEl) {
+                btnEl.click();
+            }
+        }
+    }
+
+    updateVictoryGamepadFocus() {
+        this.vicItems.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.classList.remove('gamepad-focused');
+        });
+
+        const focusedId = this.vicItems[this.vicIndex];
         const focusedEl = document.getElementById(focusedId);
         if (focusedEl) {
             focusedEl.classList.add('gamepad-focused');

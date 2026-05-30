@@ -78,7 +78,7 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 /* FUNDO ANIMADO PREMIUM */
@@ -122,6 +122,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    margin: auto;
 }
 
 /* HEADER GLOBAL */
@@ -1814,9 +1815,8 @@ body.light-mode kbd {
 }
 
 body.light-mode .qte-prompt {
-    background: #eef1f6;
-    border-color: #d0d6e2;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    /* Mantém os fundos escuros originais dos botões para que os textos claros/amarelos/neons fiquem perfeitamente legíveis! */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 body.light-mode .analog-visualizer {
