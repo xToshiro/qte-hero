@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QTE Hero - Treinador de Quick Time Events Xbox</title>
+    <!-- Google Fonts para tipografia premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para ícones premium -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fundo animado com partículas/gradiente dinâmico -->
+    <div class="bg-gradient-grid"></div>
+
+    <div class="app-container">
+        <!-- HEADER GLOBAL: Status do Controle e Controles de Tema -->
+        <header class="global-header">
+            <div class="logo">
+                <span class="highlight">QTE</span> HERO
+                <span id="sub-logo" class="sub-logo">MULTIPLATFORM EDITION</span>
+            </div>
+            
+            <div class="header-right">
+                <!-- Botão de Alternar Tema Claro/Escuro -->
+                <button id="theme-toggle-btn" class="btn theme-toggle-btn" title="Alternar Tema Claro/Escuro">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <div id="gamepad-status-card" class="gamepad-status disconnected">
+                    <div class="status-indicator"></div>
+                    <div class="status-text">
+                        <span class="status-label">CONTROLE:</span>
+                        <span id="gamepad-status-text" class="status-value">DESCONECTADO</span>
+                    </div>
+                    <div id="gamepad-name" class="gamepad-details">Aperte qualquer botão no controle para conectar</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- TELA 1: MENU PRINCIPAL -->
+        <main id="menu-screen" class="screen active">
+            <div class="hero-section">
+                <h1 class="hero-title">Domine os reflexos do seu controle</h1>
+                <p class="hero-subtitle">Treine sua memória muscular para Quick Time Events de jogos de história! Pratique e domine os botões do Xbox (A, B, X, Y) ou PlayStation (✕, ◯, ⬜, △), gatilhos e analógicos.</p>
+            </div>
+
+            <div class="menu-grid-top">
+                <!-- Configuração de Layout do Controle -->
+                <div class="menu-card glass-panel">
+                    <h2 class="card-title"><i class="fa-solid fa-gamepad"></i> Tipo de Controle</h2>
+                    <div class="mode-selector">
+                        <div class="mode-option active" data-layout="xbox" id="layout-xbox-btn">
+                            <div class="mode-icon"><i class="fa-brands fa-xbox"></i></div>
+                            <div class="mode-info">
+                                <span class="mode-name">Layout Xbox</span>
+                                <span class="mode-desc">Exibe botões clássicos (A, B, X, Y, LT, RT). Padrão para controles nativos Xbox e XInput.</span>
+                            </div>
+                        </div>
+                        <div class="mode-option" data-layout="ps4" id="layout-ps4-btn">
+                            <div class="mode-icon"><i class="fa-brands fa-playstation"></i></div>
+                            <div class="mode-info">
+                                <span class="mode-name">Layout PS4</span>
+                                <span class="mode-desc">Exibe botões clássicos (✕, ◯, ⬜, △, L2, R2). Perfeito para praticar a memória muscular do DualShock.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Configuração de Modo -->
+                <div class="menu-card glass-panel">
+                    <h2 class="card-title"><i class="fa-solid fa-circle-play"></i> Selecione o Modo</h2>
+                    <div class="mode-selector">
+                        <div class="mode-option active" data-mode="normal" id="mode-normal">
+                            <div class="mode-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                            <div class="mode-info">
+                                <span class="mode-name">Modo Treino</span>
+                                <span class="mode-desc">Erros não terminam o jogo. Pratique livremente, acumule combos e bata seu recorde até o fim da fase.</span>
+                            </div>
+                        </div>
+                        <div class="mode-option" data-mode="hardcore" id="mode-hardcore">
+                            <div class="mode-icon"><i class="fa-solid fa-skull"></i></div>
+                            <div class="mode-info">
+                                <span class="mode-name">Morte Súbita</span>
+                                <span class="mode-desc">Tensão máxima. Um único erro de botão ou atraso resulta em Game Over instantâneo. Teste seus limites!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Configuração de Dificuldade -->
+                <div class="menu-card glass-panel">
+                    <h2 class="card-title"><i class="fa-solid fa-gauge-high"></i> Dificuldade</h2>
+                    <div class="difficulty-grid">
+                        <button class="diff-btn active" data-diff="easy" id="diff-easy">
+                            <span class="diff-title">Recruta</span>
+                            <span class="diff-badge green">Fácil</span>
+                            <span class="diff-detail">Tempo generoso (2.5s) & aumento lento de velocidade.</span>
+                        </button>
+                        <button class="diff-btn" data-diff="medium" id="diff-medium">
+                            <span class="diff-title">Guerreiro</span>
+                            <span class="diff-badge blue">Médio</span>
+                            <span class="diff-detail">Ritmo equilibrado (1.8s) & velocidade moderada.</span>
+                        </button>
+                        <button class="diff-btn" data-diff="hard" id="diff-hard">
+                            <span class="diff-title">Lenda</span>
+                            <span class="diff-badge orange">Difícil</span>
+                            <span class="diff-detail">Requer reflexos rápidos (1.2s) & aceleração intensa.</span>
+                        </button>
+                        <button class="diff-btn" data-diff="insane" id="diff-insane">
+                            <span class="diff-title">Divino</span>
+                            <span class="diff-badge magenta">Insano</span>
+                            <span class="diff-detail">Velocidade extrema (0.8s) & tempo de reação quase zero.</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botões de Ação Principais -->
+            <div class="menu-actions">
+                <button id="start-game-btn" class="btn primary-btn glow-green">
+                    <i class="fa-solid fa-play"></i> INICIAR JOGO
+                </button>
+                <button id="open-playground-btn" class="btn secondary-btn">
+                    <i class="fa-solid fa-sliders"></i> PLAYGROUND DO CONTROLE
+                </button>
+                <button id="open-stats-btn" class="btn secondary-btn">
+                    <i class="fa-solid fa-chart-line"></i> ESTATÍSTICAS E EVOLUÇÃO
+                </button>
+            </div>
+
+            <!-- Painel de Gerenciamento de Dados -->
+            <div class="menu-grid">
+                <div class="menu-card glass-panel data-management-panel">
+                    <h2 class="card-title"><i class="fa-solid fa-database"></i> Dados Locais</h2>
+                    <p class="data-desc">Suas estatísticas históricas são gravadas apenas no seu navegador para registrar recordes pessoais.</p>
+                    <div class="data-actions">
+                        <button id="export-data-btn" class="btn secondary-btn btn-sm"><i class="fa-solid fa-download"></i> Exportar (JSON)</button>
+                        <button id="import-data-btn" class="btn secondary-btn btn-sm"><i class="fa-solid fa-upload"></i> Importar (JSON)</button>
+                        <input type="file" id="import-file-input" accept=".json" style="display: none;">
+                        <button id="clear-data-btn" class="btn secondary-btn btn-sm text-red"><i class="fa-solid fa-trash-can"></i> Limpar Tudo</button>
+                    </div>
+                </div>
+
+                <!-- Dicas de Teclado -->
+                <div class="menu-card glass-panel keyboard-tips-panel">
+                    <h2 class="card-title"><i class="fa-solid fa-keyboard"></i> Teclado como Fallback</h2>
+                    <div class="tips-grid-mini">
+                        <div><strong>Botões:</strong> A=<kbd>Enter</kbd>, B=<kbd>Back</kbd>, X=<kbd>X</kbd>, Y=<kbd>Y</kbd></div>
+                        <div><strong>Triggers:</strong> LB=<kbd>Q</kbd>, RB=<kbd>E</kbd>, LT=<kbd>Z</kbd>, RT=<kbd>C</kbd></div>
+                        <div><strong>Analógico LS:</strong> <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> | <strong>RS:</strong> Setas <kbd>↑</kbd> <kbd>←</kbd> <kbd>↓</kbd> <kbd>→</kbd></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- TELA 2: PLAYGROUND / DIAGNÓSTICO DO CONTROLE -->
+        <main id="playground-screen" class="screen">
+            <div class="screen-header">
+                <button id="back-to-menu-from-playground" class="btn back-btn"><i class="fa-solid fa-arrow-left"></i> Voltar ao Menu</button>
+                <h2>Playground de Calibração</h2>
+                <p>Pressione os botões e mova os analógicos para testar o mapeamento e o tempo de resposta em tempo real.</p>
+            </div>
+
+            <div class="playground-layout">
+                <!-- Controle Xbox Visual -->
+                <div class="visual-controller-container glass-panel">
+                    <div id="xbox-visual-controller" class="xbox-controller">
+                        <!-- Botões Principais -->
+                        <div class="controller-button btn-xbox-a" id="visual-btn-A">A</div>
+                        <div class="controller-button btn-xbox-b" id="visual-btn-B">B</div>
+                        <div class="controller-button btn-xbox-x" id="visual-btn-X">X</div>
+                        <div class="controller-button btn-xbox-y" id="visual-btn-Y">Y</div>
+
+                        <!-- Bumpers e Gatilhos -->
+                        <div class="controller-bumper bumper-left" id="visual-btn-LB">LB</div>
+                        <div class="controller-bumper bumper-right" id="visual-btn-RB">RB</div>
+                        <div class="controller-trigger trigger-left" id="visual-btn-LT">LT <span class="trigger-val" id="val-LT">0%</span></div>
+                        <div class="controller-trigger trigger-right" id="visual-btn-RT">RT <span class="trigger-val" id="val-RT">0%</span></div>
+
+                        <!-- Analógicos -->
+                        <div class="controller-thumbstick thumbstick-left" id="visual-stick-LS">
+                            <div class="stick-knob" id="knob-LS"></div>
+                            <span class="stick-label">LS</span>
+                        </div>
+                        <div class="controller-thumbstick thumbstick-right" id="visual-stick-RS">
+                            <div class="stick-knob" id="knob-RS"></div>
+                            <span class="stick-label">RS</span>
+                        </div>
+
+                        <!-- D-Pad (Direcional) -->
+                        <div class="controller-dpad">
+                            <div class="dpad-dir dpad-up" id="visual-btn-DUp"><i class="fa-solid fa-caret-up"></i></div>
+                            <div class="dpad-dir dpad-down" id="visual-btn-DDown"><i class="fa-solid fa-caret-down"></i></div>
+                            <div class="dpad-dir dpad-left" id="visual-btn-DLeft"><i class="fa-solid fa-caret-left"></i></div>
+                            <div class="dpad-dir dpad-right" id="visual-btn-DRight"><i class="fa-solid fa-caret-right"></i></div>
+                        </div>
+
+                        <!-- Botões do Centro -->
+                        <div class="controller-center-btn btn-view" id="visual-btn-View"><i class="fa-solid fa-window-restore"></i></div>
+                        <div class="controller-center-btn btn-menu" id="visual-btn-Menu"><i class="fa-solid fa-bars"></i></div>
+                    </div>
+                </div>
+
+                <!-- Painel de Dados Técnicos -->
+                <div class="diagnostic-panel glass-panel">
+                    <h3><i class="fa-solid fa-microchip"></i> Leituras de Entrada</h3>
+                    
+                    <div class="diagnostic-grid">
+                        <div class="diag-card">
+                            <h4>Analógico Esquerdo (LS)</h4>
+                            <div class="coord-row">X: <span id="diag-ls-x">0.00</span></div>
+                            <div class="coord-row">Y: <span id="diag-ls-y">0.00</span></div>
+                            <div class="analog-visualizer">
+                                <div class="analog-dot" id="dot-ls"></div>
+                            </div>
+                        </div>
+
+                        <div class="diag-card">
+                            <h4>Analógico Direito (RS)</h4>
+                            <div class="coord-row">X: <span id="diag-rs-x">0.00</span></div>
+                            <div class="coord-row">Y: <span id="diag-rs-y">0.00</span></div>
+                            <div class="analog-visualizer">
+                                <div class="analog-dot" id="dot-rs"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="haptic-test-section">
+                        <h4>Teste de Vibração (Actuator)</h4>
+                        <p class="haptic-support-label" id="haptic-supported">Suporte: Checando...</p>
+                        <button id="test-vibration-btn" class="btn secondary-btn"><i class="fa-solid fa-circle-nodes"></i> Vibrar Controle</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- TELA 2.5: ESTATÍSTICAS HISTÓRICAS E EVOLUÇÃO -->
+        <main id="stats-screen" class="screen">
+            <div class="screen-header">
+                <button id="back-to-menu-from-stats" class="btn back-btn"><i class="fa-solid fa-arrow-left"></i> Voltar ao Menu</button>
+                <h2>Painel de Evolução do Jogador</h2>
+                <p>Acompanhe suas estatísticas de treino acumuladas e a curva de aprimoramento dos seus reflexos.</p>
+            </div>
+
+            <!-- Painel se houver dados vazios -->
+            <div id="stats-empty-panel" class="stats-empty-panel glass-panel">
+                <div class="empty-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Sem histórico registrado</h3>
+                <p>Você precisa completar pelo menos uma partida para começar a acumular dados analíticos no seu navegador.</p>
+                <button id="start-first-game-btn" class="btn primary-btn glow-green" style="margin-top: 15px;">
+                    <i class="fa-solid fa-play"></i> INICIAR PRIMEIRO TREINO
+                </button>
+            </div>
+
+            <!-- Painel principal de estatísticas -->
+            <div id="stats-main-layout" class="stats-main-layout hidden">
+                <!-- Cards de Métricas Acumuladas -->
+                <div class="stats-summary-grid">
+                    <div class="stat-card glass-panel">
+                        <span class="stat-lbl"><i class="fa-solid fa-gamepad text-blue"></i> Partidas Jogadas</span>
+                        <span class="stat-val" id="hist-matches">0</span>
+                    </div>
+                    <div class="stat-card glass-panel">
+                        <span class="stat-lbl"><i class="fa-solid fa-trophy yellow-text"></i> Pontuação Recorde</span>
+                        <span class="stat-val yellow-text" id="hist-best-score">00000</span>
+                    </div>
+                    <div class="stat-card glass-panel">
+                        <span class="stat-lbl"><i class="fa-solid fa-clock text-blue"></i> Reação Média</span>
+                        <span class="stat-val" id="hist-avg-reaction">0ms</span>
+                    </div>
+                    <div class="stat-card glass-panel">
+                        <span class="stat-lbl"><i class="fa-solid fa-bullseye green-text"></i> Precisão Geral</span>
+                        <span class="stat-val green-text" id="hist-avg-accuracy">0%</span>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Evolução e Insights -->
+                <div class="chart-and-nerd-layout">
+                    <!-- Gráfico Histórico -->
+                    <div class="chart-section glass-panel">
+                        <h3><i class="fa-solid fa-arrow-trend-up"></i> Histórico de Pontuação das Partidas</h3>
+                        <div class="chart-container">
+                            <svg id="hist-score-chart" class="reaction-chart" viewBox="0 0 600 240"></svg>
+                        </div>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="legend-dot reaction" style="background: var(--xbox-green);"></span> Pontuação por Partida</span>
+                        </div>
+                    </div>
+
+                    <!-- Insights Inteligentes -->
+                    <div class="nerd-stats-panel glass-panel">
+                        <h3><i class="fa-solid fa-brain" style="color: var(--insane-color);"></i> Insights de Performance</h3>
+                        <div class="insights-list" id="hist-insights">
+                            <!-- Injetado via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lista de Partidas Recentes -->
+                <div class="recent-matches-section glass-panel" style="margin-top: 25px;">
+                    <h3><i class="fa-solid fa-list-check text-blue"></i> Histórico de Partidas Recentes</h3>
+                    <div class="recent-matches-table-container">
+                        <table class="recent-matches-table">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Dificuldade</th>
+                                    <th>Modo</th>
+                                    <th>Pontos</th>
+                                    <th>Precisão</th>
+                                    <th>Reação Média</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-matches-tbody">
+                                <!-- Injetado via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- TELA 3: ARENA DE GAMEPLAY (O JOGO) -->
+        <main id="game-screen" class="screen">
+            <!-- HUD Superior -->
+            <div class="game-hud">
+                <div class="hud-item level-progress-container">
+                    <div class="hud-label">PROGRESSO DO NÍVEL</div>
+                    <div class="progress-bar-bg">
+                        <div id="level-progress-bar" class="progress-bar-fill"></div>
+                    </div>
+                    <div class="progress-ratio" id="level-progress-ratio">0 / 30</div>
+                </div>
+
+                <div class="hud-item score-container glass-panel">
+                    <div class="hud-label">PONTOS</div>
+                    <div class="hud-value" id="game-score">00000</div>
+                </div>
+
+                <div class="hud-item combo-container glass-panel" id="combo-box">
+                    <div class="hud-label">COMBO</div>
+                    <div class="hud-value" id="game-combo">x1</div>
+                    <div class="combo-ring-container">
+                        <svg class="combo-svg" viewBox="0 0 36 36">
+                            <path class="combo-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path id="combo-ring-fill" class="combo-ring-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="hud-item lives-container glass-panel" id="lives-box">
+                    <div class="hud-label" id="life-label">VIDAS</div>
+                    <div class="lives-display" id="lives-display">
+                        <i class="fa-solid fa-heart active"></i>
+                        <i class="fa-solid fa-heart active"></i>
+                        <i class="fa-solid fa-heart active"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Central QTE Stage -->
+            <div class="qte-stage">
+                <!-- Prompt do botão QTE com o Timer Circular Externo -->
+                <div class="qte-container" id="qte-container">
+                    <svg class="timer-svg" viewBox="0 0 120 120">
+                        <!-- Círculo de fundo do cronômetro -->
+                        <circle class="timer-track" cx="60" cy="60" r="50"></circle>
+                        <!-- Círculo animado que diminui (Timer real) -->
+                        <circle id="timer-indicator" class="timer-fill" cx="60" cy="60" r="50" stroke-dasharray="314.16" stroke-dashoffset="0"></circle>
+                    </svg>
+
+                    <!-- Elemento Central do Prompt (Botão Dinâmico) -->
+                    <div class="qte-prompt" id="qte-prompt">
+                        <!-- Conteúdo será injetado dinamicamente -->
+                        <div class="prompt-core">
+                            <span class="prompt-text">A</span>
+                        </div>
+                    </div>
+
+                    <!-- Instrução de Ação Adicional (ex: "SEGURE!", "APERTE RAPIDO!") -->
+                    <div class="action-banner hidden" id="action-banner">SEGURE</div>
+                    
+                    <!-- Feedback numérico de cliques no MASH (ex: 3 / 6) -->
+                    <div class="mash-counter hidden" id="mash-counter">0 / 5</div>
+                </div>
+
+                <!-- Textos de Feedback flutuantes ("PERFEITO!", "LENTO!", "ERROU!") -->
+                <div class="feedback-text-container" id="feedback-text-container">
+                    <div class="feedback-text" id="feedback-text">PERFEITO!</div>
+                </div>
+            </div>
+
+            <!-- Efeitos dinâmicos: Flash na tela -->
+            <div class="screen-flash" id="screen-flash"></div>
+        </main>
+
+        <!-- TELA 4: TELA DE GAME OVER (FIM DE JOGO) -->
+        <main id="gameover-screen" class="screen">
+            <div class="result-card glass-panel glow-red">
+                <div class="result-icon error-glow"><i class="fa-solid fa-skull"></i></div>
+                <h1 class="result-title red-text">FIM DE JOGO</h1>
+                <p class="result-message" id="gameover-message">Você não conseguiu reagir a tempo ou apertou o botão incorreto no Modo Morte Súbita.</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-lbl">Pontuação Final</span>
+                        <span class="stat-val yellow-text" id="go-score">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-lbl">Maior Combo</span>
+                        <span class="stat-val" id="go-combo">x1</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-lbl">Precisão</span>
+                        <span class="stat-val" id="go-accuracy">0%</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-lbl">Reação Média</span>
+                        <span class="stat-val" id="go-reaction">0ms</span>
+                    </div>
+                </div>
+
+                <!-- GRÁFICO E ESTATÍSTICAS NERD PARA GAME OVER -->
+                <div class="chart-and-nerd-layout">
+                    <!-- Gráfico SVG -->
+                    <div class="chart-section glass-panel">
+                        <h3><i class="fa-solid fa-chart-line"></i> Curva de Tempo de Reação</h3>
+                        <div class="chart-container">
+                            <svg id="go-reaction-chart" class="reaction-chart" viewBox="0 0 600 240"></svg>
+                        </div>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="legend-dot limit"></span> Tempo de Janela (QTE)</span>
+                            <span class="legend-item"><span class="legend-dot reaction"></span> Sua Reação</span>
+                            <span class="legend-item"><span class="legend-dot miss-dot"></span> Erros</span>
+                        </div>
+                    </div>
+
+                    <!-- Nerd Stats -->
+                    <div class="nerd-stats-panel glass-panel">
+                        <h3><i class="fa-solid fa-brain"></i> Estatísticas para Nerds</h3>
+                        <div class="nerd-grid">
+                            <div class="nerd-stat"><strong>Mínimo / Máximo:</strong> <span id="go-nerd-minmax">0ms / 0ms</span></div>
+                            <div class="nerd-stat"><strong>Desvio Padrão:</strong> <span id="go-nerd-sd">0ms</span></div>
+                            <div class="nerd-stat"><strong>Consistência:</strong> <span id="go-nerd-consistency">---</span></div>
+                            <div class="nerd-stat"><strong>Ações / Minuto (APM):</strong> <span id="go-nerd-apm">0</span></div>
+                            <div class="nerd-stat-types">
+                                <strong>Precisão por Tipo de QTE:</strong>
+                                <ul class="type-accuracy-list" id="go-nerd-types"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <button id="restart-game-btn" class="btn primary-btn glow-red"><i class="fa-solid fa-rotate-left"></i> Jogar Novamente</button>
+                    <button id="menu-btn-from-go" class="btn secondary-btn"><i class="fa-solid fa-house"></i> Voltar ao Menu</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- TELA 5: TELA DE VITÓRIA (FASE CONCLUÍDA) -->
+        <main id="victory-screen" class="screen">
+            <div class="result-card glass-panel glow-green">
+                <div class="result-icon success-glow"><i class="fa-solid fa-trophy"></i></div>
+                <h1 class="result-title green-text">FASE CONCLUÍDA!</h1>
+                <p class="result-message">Excelente reflexo! Você dominou os comandos do Xbox com precisão de elite.</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-lbl">Pontuação Final</span>
+                        <span class="stat-val yellow-text" id="vic-score">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-lbl">Maior Combo</span>
+                        <span class="stat-val" id="vic-combo">x1</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-lbl">Precisão</span>
+                        <span class="stat-val" id="vic-accuracy">0%</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-lbl">Reação Média</span>
+                        <span class="stat-val" id="vic-reaction">0ms</span>
+                    </div>
+                </div>
+
+                <!-- GRÁFICO E ESTATÍSTICAS NERD PARA VITÓRIA -->
+                <div class="chart-and-nerd-layout">
+                    <!-- Gráfico SVG -->
+                    <div class="chart-section glass-panel">
+                        <h3><i class="fa-solid fa-chart-line"></i> Curva de Tempo de Reação</h3>
+                        <div class="chart-container">
+                            <svg id="vic-reaction-chart" class="reaction-chart" viewBox="0 0 600 240"></svg>
+                        </div>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="legend-dot limit"></span> Tempo de Janela (QTE)</span>
+                            <span class="legend-item"><span class="legend-dot reaction"></span> Sua Reação</span>
+                            <span class="legend-item"><span class="legend-dot miss-dot"></span> Erros</span>
+                        </div>
+                    </div>
+
+                    <!-- Nerd Stats -->
+                    <div class="nerd-stats-panel glass-panel">
+                        <h3><i class="fa-solid fa-brain"></i> Estatísticas para Nerds</h3>
+                        <div class="nerd-grid">
+                            <div class="nerd-stat"><strong>Mínimo / Máximo:</strong> <span id="vic-nerd-minmax">0ms / 0ms</span></div>
+                            <div class="nerd-stat"><strong>Desvio Padrão:</strong> <span id="vic-nerd-sd">0ms</span></div>
+                            <div class="nerd-stat"><strong>Consistência:</strong> <span id="vic-nerd-consistency">---</span></div>
+                            <div class="nerd-stat"><strong>Ações / Minuto (APM):</strong> <span id="vic-nerd-apm">0</span></div>
+                            <div class="nerd-stat-types">
+                                <strong>Precisão por Tipo de QTE:</strong>
+                                <ul class="type-accuracy-list" id="vic-nerd-types"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <button id="restart-game-victory-btn" class="btn primary-btn glow-green"><i class="fa-solid fa-play"></i> Jogar Novamente</button>
+                    <button id="menu-btn-from-vic" class="btn secondary-btn"><i class="fa-solid fa-house"></i> Voltar ao Menu</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER GLOBAL E POLÍTICA -->
+        <footer class="global-footer">
+            <span class="footer-copy">&copy; 2026 QTE Hero. Executado 100% offline.</span>
+            <button id="open-privacy-btn" class="btn-link">Política de Privacidade</button>
+        </footer>
+    </div>
+
+    <!-- MODAL DE PAUSA -->
+    <div id="pause-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-panel pause-content">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-circle-pause text-blue"></i> JOGO PAUSADO</h2>
+            </div>
+            <div class="modal-body text-center">
+                <p>Sua partida foi temporariamente suspensa.</p>
+                <div class="pause-actions" style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px; width: 100%;">
+                    <button id="resume-game-btn" class="btn primary-btn glow-blue">
+                        <i class="fa-solid fa-play"></i> CONTINUAR
+                    </button>
+                    <button id="exit-game-btn" class="btn secondary-btn">
+                        <i class="fa-solid fa-house"></i> SAIR PARA O MENU
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE POLÍTICA DE PRIVACIDADE -->
+    <div id="privacy-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-shield-halved"></i> Política de Privacidade</h2>
+                <button id="close-privacy-btn" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Nós respeitamos plenamente os seus dados.</strong> O QTE Hero foi projetado para rodar inteiramente no lado do cliente (client-side) sem qualquer processamento remoto.</p>
+                
+                <div class="policy-item">
+                    <h4><i class="fa-solid fa-server"></i> Conectividade Remota Zero</h4>
+                    <p>Este aplicativo é totalmente autônomo. Não há tráfego de dados para servidores de terceiros ou monitoramento oculto.</p>
+                </div>
+                
+                <div class="policy-item">
+                    <h4><i class="fa-solid fa-hard-drive"></i> Cookies e Web Storage</h4>
+                    <p>Utilizamos apenas o recurso local <code>localStorage</code> do seu navegador. Ele é usado única e exclusivamente para salvar seu histórico de pontuações e recordes de tempo de reação para exibição própria na interface.</p>
+                </div>
+                
+                <div class="policy-item">
+                    <h4><i class="fa-solid fa-file-export"></i> Pleno Controle</h4>
+                    <p>O jogador possui controle de propriedade total de seus dados históricos de treino. Você pode exportá-los em um arquivo legível JSON, apagá-los de vez clicando em "Limpar Tudo", ou desativar o salvamento a qualquer momento.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BANNER DE CONSENTIMENTO DE COOKIES / WEB STORAGE -->
+    <div id="consent-banner" class="consent-banner glass-panel hidden">
+        <div class="consent-text">
+            <i class="fa-solid fa-cookie-bite cookie-icon"></i>
+            <div>
+                <h4>Permite guardar seu histórico?</h4>
+                <p>Deseja ativar o armazenamento local do navegador para salvar seus recordes e gerar gráficos históricos de performance?</p>
+            </div>
+        </div>
+        <div class="consent-actions">
+            <button id="consent-accept-btn" class="btn primary-btn btn-sm">Permitir</button>
+            <button id="consent-decline-btn" class="btn secondary-btn btn-sm">Recusar</button>
+        </div>
+    </div>
+
+    <!-- Scripts da aplicação -->
+    <script src="sound.js"></script>
+    <script src="gamepad.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

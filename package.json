@@ -1,0 +1,17 @@
+{
+  "name": "qte-hero",
+  "version": "1.0.0",
+  "description": "Treinador de Quick Time Events para Controle Xbox",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "qte",
+    "xbox",
+    "gamepad",
+    "trainer"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}
