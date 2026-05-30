@@ -9,33 +9,33 @@
     --border-color: rgba(255, 255, 255, 0.08);
     --text-primary: #f0f3f8;
     --text-muted: #8b95a5;
-    
+
     --bg-radial-1: rgba(16, 124, 17, 0.08);
     --bg-radial-2: rgba(0, 120, 212, 0.08);
-    
+
     /* Xbox Theme Palette */
     --xbox-green: #107c11;
     --xbox-green-glow: rgba(16, 124, 17, 0.5);
     --xbox-green-hover: #169317;
-    
+
     /* Xbox Buttons */
     --color-a: #107c11;
     --color-b: #e81123;
     --color-x: #0078d4;
     --color-y: #fff100;
     --color-trigger: #505050;
-    
+
     /* Glows */
     --glow-a: 0 0 20px rgba(16, 124, 17, 0.8), inset 0 0 10px rgba(16, 124, 17, 0.5);
     --glow-b: 0 0 20px rgba(232, 17, 35, 0.8), inset 0 0 10px rgba(232, 17, 35, 0.5);
     --glow-x: 0 0 20px rgba(0, 120, 212, 0.8), inset 0 0 10px rgba(0, 120, 212, 0.5);
     --glow-y: 0 0 20px rgba(255, 241, 0, 0.8), inset 0 0 10px rgba(255, 241, 0, 0.5);
     --glow-white: 0 0 15px rgba(255, 255, 255, 0.6);
-    
+
     /* Fonts */
     --font-ui: 'Outfit', sans-serif;
     --font-retro: 'Orbitron', sans-serif;
-    
+
     /* System Colors */
     --easy-color: #107c11;
     --medium-color: #0078d4;
@@ -48,7 +48,8 @@ body.layout-ps4 {
     --xbox-green-glow: rgba(0, 120, 212, 0.5);
     --xbox-green-hover: #0086f0;
     --bg-radial-1: rgba(0, 120, 212, 0.08);
-    --bg-radial-2: rgba(255, 0, 127, 0.08); /* Pink/Blue PlayStation Theme */
+    --bg-radial-2: rgba(255, 0, 127, 0.08);
+    /* Pink/Blue PlayStation Theme */
 }
 
 body.light-mode.layout-ps4 {
@@ -89,7 +90,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: 
+    background:
         radial-gradient(circle at 10% 20%, var(--bg-radial-1) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, var(--bg-radial-2) 0%, transparent 40%),
         linear-gradient(135deg, #090a0f 0%, #12131a 100%);
@@ -103,7 +104,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -465,10 +466,29 @@ body {
     border-radius: 4px;
 }
 
-.diff-badge.green { background: rgba(16, 124, 17, 0.15); color: #2ecc71; border: 1px solid rgba(16, 124, 17, 0.3); }
-.diff-badge.blue { background: rgba(0, 120, 212, 0.15); color: #3498db; border: 1px solid rgba(0, 120, 212, 0.3); }
-.diff-badge.orange { background: rgba(255, 140, 0, 0.15); color: #e67e22; border: 1px solid rgba(255, 140, 0, 0.3); }
-.diff-badge.magenta { background: rgba(255, 0, 127, 0.15); color: #ff007f; border: 1px solid rgba(255, 0, 127, 0.3); }
+.diff-badge.green {
+    background: rgba(16, 124, 17, 0.15);
+    color: #2ecc71;
+    border: 1px solid rgba(16, 124, 17, 0.3);
+}
+
+.diff-badge.blue {
+    background: rgba(0, 120, 212, 0.15);
+    color: #3498db;
+    border: 1px solid rgba(0, 120, 212, 0.3);
+}
+
+.diff-badge.orange {
+    background: rgba(255, 140, 0, 0.15);
+    color: #e67e22;
+    border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+.diff-badge.magenta {
+    background: rgba(255, 0, 127, 0.15);
+    color: #ff007f;
+    border: 1px solid rgba(255, 0, 127, 0.3);
+}
 
 .diff-detail {
     font-size: 0.72rem;
@@ -476,10 +496,29 @@ body {
     line-height: 1.3;
 }
 
-.diff-btn.active[data-diff="easy"] { border-color: var(--easy-color); background: rgba(16, 124, 17, 0.08); box-shadow: 0 0 12px rgba(16, 124, 17, 0.2); }
-.diff-btn.active[data-diff="medium"] { border-color: var(--medium-color); background: rgba(0, 120, 212, 0.08); box-shadow: 0 0 12px rgba(0, 120, 212, 0.2); }
-.diff-btn.active[data-diff="hard"] { border-color: var(--hard-color); background: rgba(255, 140, 0, 0.08); box-shadow: 0 0 12px rgba(255, 140, 0, 0.2); }
-.diff-btn.active[data-diff="insane"] { border-color: var(--insane-color); background: rgba(255, 0, 127, 0.08); box-shadow: 0 0 12px rgba(255, 0, 127, 0.2); }
+.diff-btn.active[data-diff="easy"] {
+    border-color: var(--easy-color);
+    background: rgba(16, 124, 17, 0.08);
+    box-shadow: 0 0 12px rgba(16, 124, 17, 0.2);
+}
+
+.diff-btn.active[data-diff="medium"] {
+    border-color: var(--medium-color);
+    background: rgba(0, 120, 212, 0.08);
+    box-shadow: 0 0 12px rgba(0, 120, 212, 0.2);
+}
+
+.diff-btn.active[data-diff="hard"] {
+    border-color: var(--hard-color);
+    background: rgba(255, 140, 0, 0.08);
+    box-shadow: 0 0 12px rgba(255, 140, 0, 0.2);
+}
+
+.diff-btn.active[data-diff="insane"] {
+    border-color: var(--insane-color);
+    background: rgba(255, 0, 127, 0.08);
+    box-shadow: 0 0 12px rgba(255, 0, 127, 0.2);
+}
 
 /* BOTOES GERAIS */
 .btn {
@@ -539,16 +578,39 @@ body {
 }
 
 /* GLOW BORDERS E CORES */
-.glow-green { box-shadow: 0 0 25px var(--xbox-green-glow); }
-.glow-red { box-shadow: 0 0 25px rgba(232, 17, 35, 0.25); }
-.glow-red.primary-btn { background: var(--color-b); color: white; }
-.glow-red.primary-btn:hover { background: #ff2b3d; }
+.glow-green {
+    box-shadow: 0 0 25px var(--xbox-green-glow);
+}
 
-.glow-blue { box-shadow: 0 0 25px rgba(0, 120, 212, 0.35); }
-.glow-blue.primary-btn { background: var(--medium-color); color: white; }
-.glow-blue.primary-btn:hover { background: #0086f0; }
+.glow-red {
+    box-shadow: 0 0 25px rgba(232, 17, 35, 0.25);
+}
 
-.text-blue { color: #3498db; }
+.glow-red.primary-btn {
+    background: var(--color-b);
+    color: white;
+}
+
+.glow-red.primary-btn:hover {
+    background: #ff2b3d;
+}
+
+.glow-blue {
+    box-shadow: 0 0 25px rgba(0, 120, 212, 0.35);
+}
+
+.glow-blue.primary-btn {
+    background: var(--medium-color);
+    color: white;
+}
+
+.glow-blue.primary-btn:hover {
+    background: #0086f0;
+}
+
+.text-blue {
+    color: #3498db;
+}
 
 /* GAMEPAD MENU NAVIGATION HIGHLIGHT */
 .gamepad-focused {
@@ -734,7 +796,8 @@ kbd {
     margin-top: 10px;
 }
 
-.analog-visualizer::before, .analog-visualizer::after {
+.analog-visualizer::before,
+.analog-visualizer::after {
     content: '';
     position: absolute;
     background: rgba(255, 255, 255, 0.05);
@@ -791,8 +854,13 @@ kbd {
     color: var(--text-muted);
 }
 
-.haptic-support-label.supported { color: #2ecc71; }
-.haptic-support-label.unsupported { color: #e74c3c; }
+.haptic-support-label.supported {
+    color: #2ecc71;
+}
+
+.haptic-support-label.unsupported {
+    color: #e74c3c;
+}
 
 /* ==========================================
    MODELO VISUAL DO CONTROLE XBOX (CSS)
@@ -834,15 +902,65 @@ kbd {
     cursor: default;
 }
 
-.btn-xbox-a { background-color: rgba(16, 124, 17, 0.2); border-color: var(--color-a); color: var(--color-a); left: 345px; top: 155px; }
-.btn-xbox-b { background-color: rgba(232, 17, 35, 0.2); border-color: var(--color-b); color: var(--color-b); left: 380px; top: 120px; }
-.btn-xbox-x { background-color: rgba(0, 120, 212, 0.2); border-color: var(--color-x); color: var(--color-x); left: 310px; top: 120px; }
-.btn-xbox-y { background-color: rgba(255, 241, 0, 0.2); border-color: var(--color-y); color: var(--color-y); left: 345px; top: 85px; }
+.btn-xbox-a {
+    background-color: rgba(16, 124, 17, 0.2);
+    border-color: var(--color-a);
+    color: var(--color-a);
+    left: 345px;
+    top: 155px;
+}
 
-.btn-xbox-a.pressed { background-color: var(--color-a); color: white; box-shadow: var(--glow-a); transform: scale(0.92); }
-.btn-xbox-b.pressed { background-color: var(--color-b); color: white; box-shadow: var(--glow-b); transform: scale(0.92); }
-.btn-xbox-x.pressed { background-color: var(--color-x); color: white; box-shadow: var(--glow-x); transform: scale(0.92); }
-.btn-xbox-y.pressed { background-color: var(--color-y); color: black; box-shadow: var(--glow-y); transform: scale(0.92); }
+.btn-xbox-b {
+    background-color: rgba(232, 17, 35, 0.2);
+    border-color: var(--color-b);
+    color: var(--color-b);
+    left: 380px;
+    top: 120px;
+}
+
+.btn-xbox-x {
+    background-color: rgba(0, 120, 212, 0.2);
+    border-color: var(--color-x);
+    color: var(--color-x);
+    left: 310px;
+    top: 120px;
+}
+
+.btn-xbox-y {
+    background-color: rgba(255, 241, 0, 0.2);
+    border-color: var(--color-y);
+    color: var(--color-y);
+    left: 345px;
+    top: 85px;
+}
+
+.btn-xbox-a.pressed {
+    background-color: var(--color-a);
+    color: white;
+    box-shadow: var(--glow-a);
+    transform: scale(0.92);
+}
+
+.btn-xbox-b.pressed {
+    background-color: var(--color-b);
+    color: white;
+    box-shadow: var(--glow-b);
+    transform: scale(0.92);
+}
+
+.btn-xbox-x.pressed {
+    background-color: var(--color-x);
+    color: white;
+    box-shadow: var(--glow-x);
+    transform: scale(0.92);
+}
+
+.btn-xbox-y.pressed {
+    background-color: var(--color-y);
+    color: black;
+    box-shadow: var(--glow-y);
+    transform: scale(0.92);
+}
 
 /* BUMPERS (LB/RB) */
 .controller-bumper {
@@ -899,8 +1017,13 @@ kbd {
     transition: all 0.08s linear;
 }
 
-.trigger-left { left: 100px; }
-.trigger-right { right: 100px; }
+.trigger-left {
+    left: 100px;
+}
+
+.trigger-right {
+    right: 100px;
+}
 
 .trigger-val {
     font-size: 0.55rem;
@@ -912,7 +1035,7 @@ kbd {
     transform: translateY(3px);
     background: #2b2d3d;
     color: white;
-    border-color: rgba(255,255,255,0.2);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* THUMBSTICKS (LS/RS) */
@@ -949,7 +1072,8 @@ kbd {
     transition: transform 0.05s linear;
 }
 
-.thumbstick-left.pressed .stick-knob, .thumbstick-right.pressed .stick-knob {
+.thumbstick-left.pressed .stick-knob,
+.thumbstick-right.pressed .stick-knob {
     background: #505470;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
@@ -985,10 +1109,29 @@ kbd {
     transition: all 0.1s ease;
 }
 
-.dpad-up { left: 26px; top: 2px; border-radius: 4px 4px 0 0; }
-.dpad-down { left: 26px; bottom: 2px; border-radius: 0 0 4px 4px; }
-.dpad-left { left: 2px; top: 26px; border-radius: 4px 0 0 4px; }
-.dpad-right { right: 2px; top: 26px; border-radius: 0 4px 4px 0; }
+.dpad-up {
+    left: 26px;
+    top: 2px;
+    border-radius: 4px 4px 0 0;
+}
+
+.dpad-down {
+    left: 26px;
+    bottom: 2px;
+    border-radius: 0 0 4px 4px;
+}
+
+.dpad-left {
+    left: 2px;
+    top: 26px;
+    border-radius: 4px 0 0 4px;
+}
+
+.dpad-right {
+    right: 2px;
+    top: 26px;
+    border-radius: 0 4px 4px 0;
+}
 
 .controller-dpad::before {
     content: '';
@@ -1012,7 +1155,7 @@ kbd {
     height: 18px;
     border-radius: 50%;
     background: #222533;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     position: absolute;
     top: 110px;
     display: flex;
@@ -1024,8 +1167,13 @@ kbd {
     transition: all 0.1s ease;
 }
 
-.btn-view { left: 195px; }
-.btn-menu { left: 265px; }
+.btn-view {
+    left: 195px;
+}
+
+.btn-menu {
+    left: 265px;
+}
 
 .controller-center-btn.pressed {
     background: #3b3f56;
@@ -1049,6 +1197,7 @@ kbd {
     .game-hud {
         grid-template-columns: 1fr 1fr;
     }
+
     .level-progress-container {
         grid-column: span 2;
     }
@@ -1224,7 +1373,8 @@ kbd {
     stroke: var(--xbox-green);
     stroke-width: 6;
     stroke-linecap: round;
-    transition: stroke-dashoffset 0.016s linear; /* frame-rate based smooth transition */
+    transition: stroke-dashoffset 0.016s linear;
+    /* frame-rate based smooth transition */
 }
 
 /* CORES DOS TIMERS COM BASE NO TEMPO RESTANTE */
@@ -1248,7 +1398,7 @@ kbd {
     position: relative;
     background: #1c1d24;
     border: 6px solid #282a36;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     z-index: 2;
     animation: scaleIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -1271,49 +1421,118 @@ kbd {
 /* PROMPTS DOS BOTÕES ESPECÍFICOS POR LAYOUT */
 
 /* XBOX SPECIFIC BUTTON COLORS */
-body.layout-xbox .qte-prompt.prompt-A { border-color: rgba(16, 124, 17, 0.3); background: #132414; }
-body.layout-xbox .qte-prompt.prompt-A .prompt-core { color: var(--color-a); text-shadow: var(--glow-a); }
+body.layout-xbox .qte-prompt.prompt-A {
+    border-color: rgba(16, 124, 17, 0.3);
+    background: #132414;
+}
 
-body.layout-xbox .qte-prompt.prompt-B { border-color: rgba(232, 17, 35, 0.3); background: #2b1315; }
-body.layout-xbox .qte-prompt.prompt-B .prompt-core { color: var(--color-b); text-shadow: var(--glow-b); }
+body.layout-xbox .qte-prompt.prompt-A .prompt-core {
+    color: var(--color-a);
+    text-shadow: var(--glow-a);
+}
 
-body.layout-xbox .qte-prompt.prompt-X { border-color: rgba(0, 120, 212, 0.3); background: #121e2b; }
-body.layout-xbox .qte-prompt.prompt-X .prompt-core { color: var(--color-x); text-shadow: var(--glow-x); }
+body.layout-xbox .qte-prompt.prompt-B {
+    border-color: rgba(232, 17, 35, 0.3);
+    background: #2b1315;
+}
 
-body.layout-xbox .qte-prompt.prompt-Y { border-color: rgba(255, 241, 0, 0.3); background: #2b2a11; }
-body.layout-xbox .qte-prompt.prompt-Y .prompt-core { color: var(--color-y); text-shadow: var(--glow-y); }
+body.layout-xbox .qte-prompt.prompt-B .prompt-core {
+    color: var(--color-b);
+    text-shadow: var(--glow-b);
+}
+
+body.layout-xbox .qte-prompt.prompt-X {
+    border-color: rgba(0, 120, 212, 0.3);
+    background: #121e2b;
+}
+
+body.layout-xbox .qte-prompt.prompt-X .prompt-core {
+    color: var(--color-x);
+    text-shadow: var(--glow-x);
+}
+
+body.layout-xbox .qte-prompt.prompt-Y {
+    border-color: rgba(255, 241, 0, 0.3);
+    background: #2b2a11;
+}
+
+body.layout-xbox .qte-prompt.prompt-Y .prompt-core {
+    color: var(--color-y);
+    text-shadow: var(--glow-y);
+}
 
 /* PLAYSTATION SPECIFIC BUTTON COLORS */
-body.layout-ps4 .qte-prompt.prompt-A { border-color: rgba(0, 120, 212, 0.3); background: #121e2b; } /* Cross is Blue */
-body.layout-ps4 .qte-prompt.prompt-A .prompt-core { color: var(--color-x); text-shadow: var(--glow-x); }
+body.layout-ps4 .qte-prompt.prompt-A {
+    border-color: rgba(0, 120, 212, 0.3);
+    background: #121e2b;
+}
 
-body.layout-ps4 .qte-prompt.prompt-B { border-color: rgba(232, 17, 35, 0.3); background: #2b1315; } /* Circle is Red */
-body.layout-ps4 .qte-prompt.prompt-B .prompt-core { color: var(--color-b); text-shadow: var(--glow-b); }
+/* Cross is Blue */
+body.layout-ps4 .qte-prompt.prompt-A .prompt-core {
+    color: var(--color-x);
+    text-shadow: var(--glow-x);
+}
 
-body.layout-ps4 .qte-prompt.prompt-X { border-color: rgba(255, 0, 127, 0.3); background: #2a1122; } /* Square is Pink/Magenta */
-body.layout-ps4 .qte-prompt.prompt-X .prompt-core { color: #ff007f; text-shadow: 0 0 20px rgba(255, 0, 127, 0.8), inset 0 0 10px rgba(255, 0, 127, 0.5); }
+body.layout-ps4 .qte-prompt.prompt-B {
+    border-color: rgba(232, 17, 35, 0.3);
+    background: #2b1315;
+}
 
-body.layout-ps4 .qte-prompt.prompt-Y { border-color: rgba(46, 204, 113, 0.3); background: #112a1a; } /* Triangle is Green */
-body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow: 0 0 20px rgba(46, 204, 113, 0.8), inset 0 0 10px rgba(46, 204, 113, 0.5); }
+/* Circle is Red */
+body.layout-ps4 .qte-prompt.prompt-B .prompt-core {
+    color: var(--color-b);
+    text-shadow: var(--glow-b);
+}
+
+body.layout-ps4 .qte-prompt.prompt-X {
+    border-color: rgba(255, 0, 127, 0.3);
+    background: #2a1122;
+}
+
+/* Square is Pink/Magenta */
+body.layout-ps4 .qte-prompt.prompt-X .prompt-core {
+    color: #ff007f;
+    text-shadow: 0 0 20px rgba(255, 0, 127, 0.8), inset 0 0 10px rgba(255, 0, 127, 0.5);
+}
+
+body.layout-ps4 .qte-prompt.prompt-Y {
+    border-color: rgba(46, 204, 113, 0.3);
+    background: #112a1a;
+}
+
+/* Triangle is Green */
+body.layout-ps4 .qte-prompt.prompt-Y .prompt-core {
+    color: #2ecc71;
+    text-shadow: 0 0 20px rgba(46, 204, 113, 0.8), inset 0 0 10px rgba(46, 204, 113, 0.5);
+}
 
 /* Gatilhos / Bumpers */
-.qte-prompt.prompt-LB, .qte-prompt.prompt-RB, .qte-prompt.prompt-LT, .qte-prompt.prompt-RT {
-    border-color: rgba(255,255,255,0.15);
+.qte-prompt.prompt-LB,
+.qte-prompt.prompt-RB,
+.qte-prompt.prompt-LT,
+.qte-prompt.prompt-RT {
+    border-color: rgba(255, 255, 255, 0.15);
     background: #252836;
 }
-.qte-prompt.prompt-LB .prompt-core, .qte-prompt.prompt-RB .prompt-core,
-.qte-prompt.prompt-LT .prompt-core, .qte-prompt.prompt-RT .prompt-core {
+
+.qte-prompt.prompt-LB .prompt-core,
+.qte-prompt.prompt-RB .prompt-core,
+.qte-prompt.prompt-LT .prompt-core,
+.qte-prompt.prompt-RT .prompt-core {
     color: #e5e9f0;
     font-size: 2.2rem;
     text-shadow: var(--glow-white);
 }
 
 /* Analógicos LS/RS e direções */
-.qte-prompt.prompt-LS, .qte-prompt.prompt-RS {
+.qte-prompt.prompt-LS,
+.qte-prompt.prompt-RS {
     border-color: rgba(0, 120, 212, 0.25);
     background: #0f1015;
 }
-.qte-prompt.prompt-LS .prompt-core, .qte-prompt.prompt-RS .prompt-core {
+
+.qte-prompt.prompt-LS .prompt-core,
+.qte-prompt.prompt-RS .prompt-core {
     color: #ffffff;
     font-size: 2.2rem;
 }
@@ -1332,11 +1551,25 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
 }
 
 @keyframes qteVibrate {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(-1.5px, 1px); }
-    50% { transform: translate(1.5px, -1.5px); }
-    75% { transform: translate(-1px, 1.5px); }
-    100% { transform: translate(1px, -1px); }
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-1.5px, 1px);
+    }
+
+    50% {
+        transform: translate(1.5px, -1.5px);
+    }
+
+    75% {
+        transform: translate(-1px, 1.5px);
+    }
+
+    100% {
+        transform: translate(1px, -1px);
+    }
 }
 
 @keyframes qteMashPulse {
@@ -1344,6 +1577,7 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
         box-shadow: 0 0 15px rgba(255, 0, 127, 0.5), inset 0 0 10px rgba(255, 0, 127, 0.3);
         border-color: var(--insane-color);
     }
+
     100% {
         box-shadow: 0 0 35px rgba(255, 0, 127, 0.9), inset 0 0 20px rgba(255, 0, 127, 0.6);
         border-color: #ff3b9a;
@@ -1367,9 +1601,17 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
 }
 
 @keyframes qteHoldBreath {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.04); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* BANNERS ADICIONAIS */
@@ -1489,26 +1731,30 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
    ========================================== */
 
 .result-card {
-    max-width: 950px;
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 10px 30px;
     align-items: center;
-    gap: 20px;
 }
 
 .result-icon {
-    font-size: 4rem;
-    width: 100px;
-    height: 100px;
+    font-size: 3.5rem;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 0;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
 }
 
 .result-icon.error-glow {
@@ -1527,9 +1773,12 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
 
 .result-title {
     font-family: var(--font-retro);
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 900;
     letter-spacing: 1px;
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
 }
 
 .red-text {
@@ -1543,10 +1792,14 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
 }
 
 .result-message {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    max-width: 450px;
-    line-height: 1.5;
+    max-width: 280px;
+    line-height: 1.4;
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: center;
+    align-self: start;
 }
 
 /* STATS GRID */
@@ -1555,18 +1808,15 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     width: 100%;
-    margin: 20px 0;
+    margin: 0;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .stats-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -1574,7 +1824,7 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 15px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1582,7 +1832,7 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
 }
 
 .stat-lbl {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--text-muted);
     font-weight: 700;
     text-transform: uppercase;
@@ -1590,7 +1840,7 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
 
 .stat-val {
     font-family: var(--font-retro);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: white;
 }
@@ -1599,15 +1849,56 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
 
 .result-actions {
     display: flex;
-    gap: 15px;
+    flex-direction: column;
+    gap: 10px;
     width: 100%;
     justify-content: center;
+    grid-column: 1;
+    grid-row: 4;
+    justify-self: center;
+}
+
+.result-actions .btn {
+    padding: 12px 20px;
+    font-size: 0.88rem;
+    width: 100%;
+}
+
+@media (max-width: 880px) {
+    .result-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .result-icon, .result-title, .result-message, .stats-grid, .chart-and-nerd-layout, .result-actions {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+        justify-self: center !important;
+        max-width: 100% !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .result-actions {
+        flex-direction: row !important;
+    }
+    
+    .result-actions .btn {
+        width: auto !important;
+        flex-grow: 1;
+    }
 }
 
 @media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
     .result-actions {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: column !important;
     }
 }
 
@@ -1616,50 +1907,127 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
    ========================================== */
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes pulse {
-    from { opacity: 0.7; transform: scale(1); }
-    to { opacity: 1; transform: scale(1.05); }
+    from {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.05);
+    }
 }
 
 @keyframes pulseStroke {
-    from { stroke-width: 6; }
-    to { stroke-width: 8; stroke: #ff3b4f; }
+    from {
+        stroke-width: 6;
+    }
+
+    to {
+        stroke-width: 8;
+        stroke: #ff3b4f;
+    }
 }
 
 @keyframes textPulse {
-    from { transform: scale(1); text-shadow: 0 0 10px rgba(0, 255, 255, 0.4); }
-    to { transform: scale(1.05); text-shadow: 0 0 25px rgba(0, 255, 255, 0.8); }
+    from {
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+    }
+
+    to {
+        transform: scale(1.05);
+        text-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+    }
 }
 
 @keyframes scaleIn {
-    0% { transform: scale(0.6); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes feedbackZoom {
-    0% { opacity: 0; transform: scale(0.5) translateY(10px); }
-    30% { opacity: 1; transform: scale(1.15) translateY(0); }
-    50% { opacity: 1; transform: scale(1) translateY(-5px); }
-    100% { opacity: 0; transform: scale(0.9) translateY(-25px); }
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(10px);
+    }
+
+    30% {
+        opacity: 1;
+        transform: scale(1.15) translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1) translateY(-5px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.9) translateY(-25px);
+    }
 }
 
 @keyframes feedbackShake {
-    0% { opacity: 0; transform: scale(0.8) translateX(0); }
-    15% { opacity: 1; transform: scale(1) translateX(-10px); }
-    30% { transform: translateX(8px); }
-    45% { transform: translateX(-6px); }
-    60% { transform: translateX(4px); }
-    75% { transform: translateX(0); }
-    100% { opacity: 0; transform: scale(0.9) translateY(-15px); }
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateX(0);
+    }
+
+    15% {
+        opacity: 1;
+        transform: scale(1) translateX(-10px);
+    }
+
+    30% {
+        transform: translateX(8px);
+    }
+
+    45% {
+        transform: translateX(-6px);
+    }
+
+    60% {
+        transform: translateX(4px);
+    }
+
+    75% {
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.9) translateY(-15px);
+    }
 }
 
 @keyframes flashAnim {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 /* ==========================================
@@ -1680,18 +2048,42 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
 }
 
 @keyframes shockwave {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(1.6); opacity: 0; }
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
 }
 
 /* Tremor e Glow no Hold QTE */
 @keyframes energyWiggle {
-    0% { transform: scale(0.96) translate(0, 0) rotate(0deg); }
-    20% { transform: scale(0.95) translate(-1px, 1px) rotate(-0.5deg); }
-    40% { transform: scale(0.96) translate(1px, -1px) rotate(0.5deg); }
-    60% { transform: scale(0.95) translate(-1px, -1px) rotate(-0.5deg); }
-    80% { transform: scale(0.96) translate(1px, 1px) rotate(0.5deg); }
-    100% { transform: scale(0.96) translate(0, 0) rotate(0deg); }
+    0% {
+        transform: scale(0.96) translate(0, 0) rotate(0deg);
+    }
+
+    20% {
+        transform: scale(0.95) translate(-1px, 1px) rotate(-0.5deg);
+    }
+
+    40% {
+        transform: scale(0.96) translate(1px, -1px) rotate(0.5deg);
+    }
+
+    60% {
+        transform: scale(0.95) translate(-1px, -1px) rotate(-0.5deg);
+    }
+
+    80% {
+        transform: scale(0.96) translate(1px, 1px) rotate(0.5deg);
+    }
+
+    100% {
+        transform: scale(0.96) translate(0, 0) rotate(0deg);
+    }
 }
 
 .qte-prompt.holding {
@@ -1723,22 +2115,76 @@ body.layout-ps4 .qte-prompt.prompt-Y .prompt-core { color: #2ecc71; text-shadow:
     font-size: 1.1rem;
     font-weight: 850;
     color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.15s ease;
 }
 
 /* DOUBLE BUTTONS SMALL COLOR BY LAYOUT */
-body.layout-xbox .prompt-btn-small.btn-A { border-color: var(--color-a); background: #132414; color: var(--color-a); text-shadow: var(--glow-a); }
-body.layout-xbox .prompt-btn-small.btn-B { border-color: var(--color-b); background: #2b1315; color: var(--color-b); text-shadow: var(--glow-b); }
-body.layout-xbox .prompt-btn-small.btn-X { border-color: var(--color-x); background: #121e2b; color: var(--color-x); text-shadow: var(--glow-x); }
-body.layout-xbox .prompt-btn-small.btn-Y { border-color: var(--color-y); background: #2b2a11; color: var(--color-y); text-shadow: var(--glow-y); }
+body.layout-xbox .prompt-btn-small.btn-A {
+    border-color: var(--color-a);
+    background: #132414;
+    color: var(--color-a);
+    text-shadow: var(--glow-a);
+}
 
-body.layout-ps4 .prompt-btn-small.btn-A { border-color: var(--color-x); background: #121e2b; color: var(--color-x); text-shadow: var(--glow-x); } /* Cross is Blue */
-body.layout-ps4 .prompt-btn-small.btn-B { border-color: var(--color-b); background: #2b1315; color: var(--color-b); text-shadow: var(--glow-b); } /* Circle is Red */
-body.layout-ps4 .prompt-btn-small.btn-X { border-color: #ff007f; background: #2a1122; color: #ff007f; text-shadow: 0 0 15px rgba(255,0,127,0.8); } /* Square is Pink */
-body.layout-ps4 .prompt-btn-small.btn-Y { border-color: #2ecc71; background: #112a1a; color: #2ecc71; text-shadow: 0 0 15px rgba(46,204,113,0.8); } /* Triangle is Green */
+body.layout-xbox .prompt-btn-small.btn-B {
+    border-color: var(--color-b);
+    background: #2b1315;
+    color: var(--color-b);
+    text-shadow: var(--glow-b);
+}
 
-.prompt-btn-small.btn-LB, .prompt-btn-small.btn-RB, .prompt-btn-small.btn-LT, .prompt-btn-small.btn-RT {
+body.layout-xbox .prompt-btn-small.btn-X {
+    border-color: var(--color-x);
+    background: #121e2b;
+    color: var(--color-x);
+    text-shadow: var(--glow-x);
+}
+
+body.layout-xbox .prompt-btn-small.btn-Y {
+    border-color: var(--color-y);
+    background: #2b2a11;
+    color: var(--color-y);
+    text-shadow: var(--glow-y);
+}
+
+body.layout-ps4 .prompt-btn-small.btn-A {
+    border-color: var(--color-x);
+    background: #121e2b;
+    color: var(--color-x);
+    text-shadow: var(--glow-x);
+}
+
+/* Cross is Blue */
+body.layout-ps4 .prompt-btn-small.btn-B {
+    border-color: var(--color-b);
+    background: #2b1315;
+    color: var(--color-b);
+    text-shadow: var(--glow-b);
+}
+
+/* Circle is Red */
+body.layout-ps4 .prompt-btn-small.btn-X {
+    border-color: #ff007f;
+    background: #2a1122;
+    color: #ff007f;
+    text-shadow: 0 0 15px rgba(255, 0, 127, 0.8);
+}
+
+/* Square is Pink */
+body.layout-ps4 .prompt-btn-small.btn-Y {
+    border-color: #2ecc71;
+    background: #112a1a;
+    color: #2ecc71;
+    text-shadow: 0 0 15px rgba(46, 204, 113, 0.8);
+}
+
+/* Triangle is Green */
+
+.prompt-btn-small.btn-LB,
+.prompt-btn-small.btn-RB,
+.prompt-btn-small.btn-LT,
+.prompt-btn-small.btn-RT {
     border-color: rgba(255, 255, 255, 0.25);
     background: #323545;
     color: #e5e9f0;
@@ -1752,15 +2198,31 @@ body.layout-ps4 .prompt-btn-small.btn-Y { border-color: #2ecc71; background: #11
     font-size: 1.3rem;
     font-weight: 800;
     color: var(--text-muted);
-    text-shadow: 0 0 5px rgba(255,255,255,0.1);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
 
 /* ==========================================
    TRANSIÇÃO SUAVE DE TEMA E LIGHT MODE
    ========================================== */
 
-body, .glass-panel, .app-container, header, footer, .btn, .card-title, .status-value, 
-.diag-card, .mode-option, .diff-btn, h1, h2, h3, p, kbd, .coord-row, .gamepad-status {
+body,
+.glass-panel,
+.app-container,
+header,
+footer,
+.btn,
+.card-title,
+.status-value,
+.diag-card,
+.mode-option,
+.diff-btn,
+h1,
+h2,
+h3,
+p,
+kbd,
+.coord-row,
+.gamepad-status {
     transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.2s ease;
 }
 
@@ -1770,12 +2232,12 @@ body.light-mode {
     --border-color: rgba(0, 0, 0, 0.08);
     --text-primary: #1a1e26;
     --text-muted: #5e6675;
-    
+
     --panel-bg-solid: #ffffff;
-    
+
     --bg-radial-1: rgba(16, 124, 17, 0.04);
     --bg-radial-2: rgba(0, 120, 212, 0.04);
-    
+
     /* Mapeamentos de glows mais suaves no tema claro */
     --glow-a: 0 4px 12px rgba(16, 124, 17, 0.4);
     --glow-b: 0 4px 12px rgba(232, 17, 35, 0.4);
@@ -1790,14 +2252,14 @@ body.light-mode .hero-title {
 }
 
 body.light-mode .bg-gradient-grid {
-    background: 
+    background:
         radial-gradient(circle at 10% 20%, var(--bg-radial-1) 0%, transparent 45%),
         radial-gradient(circle at 90% 80%, var(--bg-radial-2) 0%, transparent 45%),
         linear-gradient(135deg, #e9ecf2 0%, #f4f6fa 100%);
 }
 
 body.light-mode .bg-gradient-grid::before {
-    background-image: 
+    background-image:
         linear-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
     opacity: 0.8;
@@ -1816,38 +2278,73 @@ body.light-mode kbd {
 
 body.light-mode .qte-prompt {
     /* Mantém os fundos escuros originais dos botões para que os textos claros/amarelos/neons fiquem perfeitamente legíveis! */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 body.light-mode .analog-visualizer {
-    background: rgba(0,0,0,0.04);
-    border-color: rgba(0,0,0,0.08);
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.08);
 }
 
-body.light-mode .analog-visualizer::before, body.light-mode .analog-visualizer::after {
-    background: rgba(0,0,0,0.06);
+body.light-mode .analog-visualizer::before,
+body.light-mode .analog-visualizer::after {
+    background: rgba(0, 0, 0, 0.06);
 }
 
 body.light-mode .xbox-controller {
     background: #e4e7eb;
     border-color: #bdc3c7;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1), inset 0 2px 5px rgba(255,255,255,0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), inset 0 2px 5px rgba(255, 255, 255, 0.4);
 }
 
 body.light-mode .controller-button {
     background-color: rgba(0, 0, 0, 0.03);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-body.light-mode .controller-bumper { background: #dcdde1; color: #5e6675; }
-body.light-mode .controller-bumper.pressed { background: #b2bec3; color: #000; }
-body.light-mode .controller-trigger { background: #c8cbd0; border-color: #acb0b8; border-bottom-color: #555; }
-body.light-mode .controller-trigger.pressed { background: #acb0b8; }
-body.light-mode .controller-thumbstick { background: #d2d6dc; border-color: #bdc3c7; }
-body.light-mode .stick-knob { background: #7f8c8d; border-color: #95a5a6; }
-body.light-mode .dpad-dir { background: #dcdde1; color: #7f8c8d; }
-body.light-mode .dpad-dir.pressed { background: #b2bec3; color: #000; }
-body.light-mode .controller-center-btn { background: #bdc3c7; }
+body.light-mode .controller-bumper {
+    background: #dcdde1;
+    color: #5e6675;
+}
+
+body.light-mode .controller-bumper.pressed {
+    background: #b2bec3;
+    color: #000;
+}
+
+body.light-mode .controller-trigger {
+    background: #c8cbd0;
+    border-color: #acb0b8;
+    border-bottom-color: #555;
+}
+
+body.light-mode .controller-trigger.pressed {
+    background: #acb0b8;
+}
+
+body.light-mode .controller-thumbstick {
+    background: #d2d6dc;
+    border-color: #bdc3c7;
+}
+
+body.light-mode .stick-knob {
+    background: #7f8c8d;
+    border-color: #95a5a6;
+}
+
+body.light-mode .dpad-dir {
+    background: #dcdde1;
+    color: #7f8c8d;
+}
+
+body.light-mode .dpad-dir.pressed {
+    background: #b2bec3;
+    color: #000;
+}
+
+body.light-mode .controller-center-btn {
+    background: #bdc3c7;
+}
 
 /* ==========================================
    ESTILOS DOS GRÁFICOS SVG E PAINÉIS DE NERDS
@@ -1868,14 +2365,16 @@ body.light-mode .controller-center-btn { background: #bdc3c7; }
     }
 }
 
-.chart-section, .nerd-stats-panel {
+.chart-section,
+.nerd-stats-panel {
     padding: 20px;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.chart-section h3, .nerd-stats-panel h3 {
+.chart-section h3,
+.nerd-stats-panel h3 {
     font-size: 1.05rem;
     font-weight: 700;
     margin-bottom: 15px;
@@ -1885,8 +2384,13 @@ body.light-mode .controller-center-btn { background: #bdc3c7; }
     gap: 8px;
 }
 
-.chart-section h3 i { color: var(--medium-color); }
-.nerd-stats-panel h3 i { color: var(--insane-color); }
+.chart-section h3 i {
+    color: var(--medium-color);
+}
+
+.nerd-stats-panel h3 i {
+    color: var(--insane-color);
+}
 
 .chart-container {
     width: 100%;
@@ -1993,9 +2497,19 @@ body.light-mode .chart-grid-line {
     height: 10px;
     border-radius: 50%;
 }
-.legend-dot.limit { background: var(--hard-color); border-radius: 2px; }
-.legend-dot.reaction { background: var(--medium-color); }
-.legend-dot.miss-dot { background: var(--color-b); }
+
+.legend-dot.limit {
+    background: var(--hard-color);
+    border-radius: 2px;
+}
+
+.legend-dot.reaction {
+    background: var(--medium-color);
+}
+
+.legend-dot.miss-dot {
+    background: var(--color-b);
+}
 
 /* Estatísticas Nerd */
 .nerd-grid {
@@ -2055,12 +2569,12 @@ body.light-mode .nerd-stat {
     background: rgba(255, 255, 255, 0.015);
     padding: 4px 10px;
     border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.02);
+    border: 1px solid rgba(255, 255, 255, 0.02);
 }
 
 body.light-mode .type-accuracy-list li {
-    background: rgba(0,0,0,0.015);
-    border-color: rgba(0,0,0,0.04);
+    background: rgba(0, 0, 0, 0.015);
+    border-color: rgba(0, 0, 0, 0.04);
 }
 
 .type-accuracy-list span {
@@ -2192,14 +2706,14 @@ body.light-mode .theme-toggle-btn:hover {
     justify-content: space-between;
     gap: 20px;
     z-index: 9999;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(16, 124, 17, 0.3);
     opacity: 0;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
 }
 
 body.light-mode .consent-banner {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     background: #ffffff;
     border-color: rgba(16, 124, 17, 0.2);
 }
@@ -2248,6 +2762,7 @@ body.light-mode .consent-banner {
         align-items: stretch;
         gap: 15px;
     }
+
     .consent-actions {
         justify-content: flex-end;
     }
@@ -2350,17 +2865,57 @@ body.light-mode .modal-content {
 }
 
 /* PLAYGROUND VISUAL CONTROLLER STYLING FOR PLAYSTATION */
-body.layout-ps4 #visual-btn-A { background: rgba(0, 120, 212, 0.08); border-color: rgba(0, 120, 212, 0.3); color: var(--color-x); }
-body.layout-ps4 #visual-btn-A.pressed { background: var(--color-x) !important; color: white !important; box-shadow: var(--glow-x) !important; border-color: var(--color-x) !important; }
+body.layout-ps4 #visual-btn-A {
+    background: rgba(0, 120, 212, 0.08);
+    border-color: rgba(0, 120, 212, 0.3);
+    color: var(--color-x);
+}
 
-body.layout-ps4 #visual-btn-B { background: rgba(232, 17, 35, 0.08); border-color: rgba(232, 17, 35, 0.3); color: var(--color-b); }
-body.layout-ps4 #visual-btn-B.pressed { background: var(--color-b) !important; color: white !important; box-shadow: var(--glow-b) !important; border-color: var(--color-b) !important; }
+body.layout-ps4 #visual-btn-A.pressed {
+    background: var(--color-x) !important;
+    color: white !important;
+    box-shadow: var(--glow-x) !important;
+    border-color: var(--color-x) !important;
+}
 
-body.layout-ps4 #visual-btn-X { background: rgba(255, 0, 127, 0.08); border-color: rgba(255, 0, 127, 0.3); color: #ff007f; }
-body.layout-ps4 #visual-btn-X.pressed { background: #ff007f !important; color: white !important; box-shadow: 0 0 15px rgba(255,0,127,0.8) !important; border-color: #ff007f !important; }
+body.layout-ps4 #visual-btn-B {
+    background: rgba(232, 17, 35, 0.08);
+    border-color: rgba(232, 17, 35, 0.3);
+    color: var(--color-b);
+}
 
-body.layout-ps4 #visual-btn-Y { background: rgba(46, 204, 113, 0.08); border-color: rgba(46, 204, 113, 0.3); color: #2ecc71; }
-body.layout-ps4 #visual-btn-Y.pressed { background: #2ecc71 !important; color: white !important; box-shadow: 0 0 15px rgba(46,204,113,0.8) !important; border-color: #2ecc71 !important; }
+body.layout-ps4 #visual-btn-B.pressed {
+    background: var(--color-b) !important;
+    color: white !important;
+    box-shadow: var(--glow-b) !important;
+    border-color: var(--color-b) !important;
+}
+
+body.layout-ps4 #visual-btn-X {
+    background: rgba(255, 0, 127, 0.08);
+    border-color: rgba(255, 0, 127, 0.3);
+    color: #ff007f;
+}
+
+body.layout-ps4 #visual-btn-X.pressed {
+    background: #ff007f !important;
+    color: white !important;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.8) !important;
+    border-color: #ff007f !important;
+}
+
+body.layout-ps4 #visual-btn-Y {
+    background: rgba(46, 204, 113, 0.08);
+    border-color: rgba(46, 204, 113, 0.3);
+    color: #2ecc71;
+}
+
+body.layout-ps4 #visual-btn-Y.pressed {
+    background: #2ecc71 !important;
+    color: white !important;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.8) !important;
+    border-color: #2ecc71 !important;
+}
 
 /* ==========================================
    PLAYSTATION ACCENT THEME OVERRIDES
@@ -2511,7 +3066,8 @@ body.light-mode .insight-card:hover {
     font-size: 0.9rem;
 }
 
-.recent-matches-table th, .recent-matches-table td {
+.recent-matches-table th,
+.recent-matches-table td {
     padding: 14px 16px;
     border-bottom: 1px solid var(--border-color);
 }
@@ -2549,5 +3105,3 @@ body.light-mode .recent-matches-table tbody tr:hover {
 .recent-matches-table td strong {
     color: var(--text-primary);
 }
-
-
